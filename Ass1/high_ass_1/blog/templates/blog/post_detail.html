@@ -1,0 +1,23 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+<p>Author: {{ post.author }}</p>
+<p>Published on: {{ post.created_at }}</p>
+
+{% if post.author == request.user %}
+    <a href="{% url 'post_edit' post.id %}">Edit</a>
+    <a href="{% url 'post_delete' post.id %}">Delete</a>
+{% endif %}
+
+<h2>Комментарии</h2>
+<ul>
+    {% for comment in comments %}
+        <li><strong>{{ comment.author }}</strong>: {{ comment.text }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Добавить комментарий</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить комментарий</button>
+</form>
