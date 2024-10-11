@@ -1,0 +1,26 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+<p>Author: {{ post.author }}</p>
+<p>Published on: {{ post.created_at }}</p>
+
+{% if post.author == request.user %}
+    <a href="{% url 'post_edit' post.id %}">Edit</a>
+    <a href="{% url 'post_delete' post.id %}">Delete</a>
+{% endif %}
+
+<h2>Комментарии ({{ comment_count }})</h2>
+<ul>
+    {% load cache %}
+    {% cache 60 com post.id %}
+    {% for comment in comments %}
+        <li><strong>{{ comment.author }}</strong>: {{ comment.text }}</li>
+    {% endfor %}
+    {% endcache %}
+</ul>
+
+<h2>Добавить комментарий</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить комментарий</button>
+</form>
