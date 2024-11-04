@@ -1,0 +1,99 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Static files
+/staticfiles/
+*.log
+*.pot
+*.pyc
+
+# Media files
+/media/
+
+# Django stuff:
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
+.vscode/*
+.history/
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.cache/
+*.cover
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# SQLAlchemy
+*.db
+
+# dotenv
+.env
+.env.*
+
+# AWS S3 cache files
+.s3cfg
+
+# Local environment
+local_settings.py
+
+# Ignore the environment config
+.env
+
+# macOS Finder files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*~
+# Temporary files
+*.tmp
+*.temp
+
+# Ignore migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Ignore any local files or configurations
+local_settings.py
