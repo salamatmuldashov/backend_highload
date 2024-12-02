@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0.1">  
+    <title>Dataset Processing Progress</title>
+</head>
+<body>
+    <h1>Dataset Processing Progress</h1>
+    <p>Status: {{ dataset.status }}</p>
+    <div style="background-color: #ddd;">
+        <div style="height: 30px; background-color: #4caf50; width: {{ dataset.progress }}%"></div>
+    </div>
+    <p>Progress: {{ dataset.progress }}%</p>
+    {% if dataset.status == "completed" %}
+        <p>Processing complete!</p>
+    {% elif dataset.status == "failed" %}
+        <p>Processing failed!</p>
+    {% endif %}
+</body>
+</html>
